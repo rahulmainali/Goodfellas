@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Swing implements ActionListener
+public class Login implements ActionListener
 {
   private static JPanel panel;
   private static JFrame frame;
@@ -30,7 +30,7 @@ public class Swing implements ActionListener
     password.setBounds(100,50,165,25);
     button=new JButton("Login");
     button.setBounds(100,80,80,25);
-    button.addActionListener(new Swing());
+    button.addActionListener(new Login());
 
     frame.setSize(300,150);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

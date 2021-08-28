@@ -1,5 +1,4 @@
 //Making a Login GUI in Java
-package GUI;
 
 import javax.swing.JFrame;  
 import javax.swing.JPanel;   

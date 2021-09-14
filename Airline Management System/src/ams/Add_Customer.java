@@ -87,3 +87,36 @@ public class Add_Customer extends JFrame
         Female.setBackground(Color.WHITE);
         Female.setBounds(280, 320, 70, 27);
         add(Female);
+
+        JLabel Phno = new JLabel("PH NO");
+        Phno.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        Phno.setBounds(60, 370, 150, 27);
+        add(Phno);
+			
+        textField_5 = new JTextField();
+        textField_5.setBounds(200, 370, 150, 27);
+        add(textField_5);
+	
+        setVisible(true);
+	
+        JLabel AddPassengers = new JLabel("ADD CUSTOMER DETAILS");
+        AddPassengers.setForeground(Color.BLUE);
+        AddPassengers.setFont(new Font("Tahoma", Font.PLAIN, 31));
+        AddPassengers.setBounds(420, 24, 442, 35);
+        add(AddPassengers);
+			
+    
+        JLabel Flightcode = new JLabel("FLIGHT CODE");
+        Flightcode.setFont(new Font("Tahoma", Font.PLAIN, 17));
+        Flightcode.setBounds(60, 30, 150, 27);
+        add(Flightcode);
+
+        textField_6 = new JTextField();
+        textField_6.setBounds(200, 30, 150, 27);
+        add(textField_6);
+            
+            
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ams/Images/Customer.png"));
+        JLabel image = new JLabel(i1);
+        image.setBounds(450,80,280,410);
+        add(image);

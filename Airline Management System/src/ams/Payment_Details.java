@@ -47,3 +47,34 @@ public class Payment_Details extends JFrame
         Show.setForeground(Color.WHITE);
 	    Show.setBounds(200, 210, 150, 26);
 	    add(Show);
+			
+	    Sector = new JLabel("PAYMENT DETAILS");
+	    Sector.setForeground(Color.BLUE);
+	    Sector.setFont(new Font("Tahoma", Font.PLAIN, 31));
+	    Sector.setBounds(51, 17, 300, 39);
+	    add(Sector);
+		
+	    FlightCode = new JLabel("PNR_NO");
+	    FlightCode.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    FlightCode.setBounds(84, 292, 108, 26);
+	    add(FlightCode);
+		
+	    Capacity = new JLabel("PAID_AMOUNT");
+	    Capacity.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Capacity.setBounds(183, 298, 92, 14);
+	    add(Capacity);
+		
+	    Classcode = new JLabel("PAY_DATE");
+	    Classcode.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Classcode.setBounds(322, 294, 101, 24);
+	    add(Classcode);
+		
+	    Classname = new JLabel("CHEQUE_NO");
+	    Classname.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Classname.setBounds(455, 298, 114, 14);
+	    add(Classname);
+		
+	    label = new JLabel("");
+	    label.setIcon(new ImageIcon(ClassLoader.getSystemResource("airline/management/system/icon/payment.png")));
+	    label.setBounds(425, 15, 239, 272);
+	    add(label);

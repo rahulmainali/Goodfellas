@@ -120,3 +120,27 @@ public class Add_Customer extends JFrame
         JLabel image = new JLabel(i1);
         image.setBounds(450,80,280,410);
         add(image);
+
+        Next.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+                String passport_No = textField.getText();
+                String pnr_no = textField_1.getText();
+                String address =  textField_2.getText();
+                String nationality = textField_3.getText();
+                String name = textField_4.getText();
+                String fl_code = textField_6.getText();
+                   
+                String gender = null;
+                String ph_no = textField_5.getText();
+                    
+                if(NewRadioButton.isSelected())
+                {
+                    gender = "male";
+                    
+                }
+                else if(Female.isSelected())
+                {
+                        gender = "female";
+                }

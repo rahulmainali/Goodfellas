@@ -144,3 +144,32 @@ public class Add_Customer extends JFrame
                 {
                         gender = "female";
                 }
+
+                try 
+                {
+                    connection c = new connection();
+                    String str = "INSERT INTO passenger values( '"+pnr_no+"', '"+address+"', '"+nationality+"','"+name+"', '"+gender+"', '"+ph_no+"','"+passport_No+"', '"+fl_code+"')";
+                        
+                    c.stat.executeUpdate(str);
+                    JOptionPane.showMessageDialog(null,"Customer Added");
+                    setVisible(false);
+                    
+                }
+                catch (Exception e) 
+                {
+                    e.printStackTrace();
+        	    }
+		    }
+        }
+        );
+			
+        setSize(900,600);
+        setVisible(true);
+        setLocation(400,200);
+			
+	}  
+    public static void main(String[] args)
+    {
+        new Add_Customer();
+    }   
+}

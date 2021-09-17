@@ -78,3 +78,47 @@ public class Payment_Details extends JFrame
 	    label.setIcon(new ImageIcon(ClassLoader.getSystemResource("airline/management/system/icon/payment.png")));
 	    label.setBounds(425, 15, 239, 272);
 	    add(label);
+		
+	    JLabel Cardno = new JLabel("CARD_NO");
+	    Cardno.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Cardno.setBounds(602, 299, 101, 19);
+	    add(Cardno);
+		
+	    JLabel Phoneno = new JLabel("PHONE_NO");
+	    Phoneno.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Phoneno.setBounds(712, 294, 86, 24);
+	    add(Phoneno);
+	
+        setVisible(true);
+		
+	    Show.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+		
+                try 
+                {
+                    String code  = textField.getText();
+                    
+                    connection c = new connection();
+                    String str = "select pnr_no,paid_amt,pay_date,cheque_no,card_no,ph_no from payment where pnr_no = '"+code+"'";
+					
+                    ResultSet rs = c.stat.executeQuery(str);
+		
+                    table.setModel(DbUtils.resultSetToTableModel(rs));
+					
+		        }
+                catch(SQLException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+	    }
+        );
+		
+	    setSize(960,590);
+        setLocation(400,200);
+	    setVisible(true);
+
+    }
+}

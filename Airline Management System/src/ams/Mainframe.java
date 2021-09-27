@@ -38,3 +38,30 @@ public class Mainframe extends JFrame
 		
         JMenuBar menuBar = new JMenuBar();
 	    setJMenuBar(menuBar);
+
+        JMenu AirlineSystem = new JMenu("AIRLINE SYSTEM");
+        AirlineSystem.setForeground(Color.BLUE);
+	    menuBar.add(AirlineSystem);
+		
+        JMenuItem FlightDetails = new JMenuItem("FLIGHT_INFO");
+	    AirlineSystem.add(FlightDetails);
+		
+	    JMenuItem ReservationDetails = new JMenuItem("ADD_CUSTOMER_DETAILS");
+	    AirlineSystem.add(ReservationDetails);
+		
+	    JMenuItem PassengerDetails = new JMenuItem("JOURNEY_DETAILS");
+	    AirlineSystem.add(PassengerDetails);
+		
+	    JMenuItem SectorDetails_1 = new JMenuItem("PAYMENT_DETAILS");
+	    AirlineSystem.add(SectorDetails_1);
+		
+	    JMenuItem Cancellation = new JMenuItem("CANCELLATION");
+	    AirlineSystem.add(Cancellation);
+		
+	    JMenu Ticket = new JMenu("TICKET");
+        Ticket.setForeground(Color.RED);
+	    menuBar.add(Ticket);
+		
+        JMenu List = new JMenu("LIST");
+        List.setForeground(Color.BLUE);
+	    menuBar.add(List);

@@ -5,11 +5,10 @@ package ams;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.sql.*;
 
 public class Add_Customer extends JFrame
-{
-
-    
+{  
 	JTextField textField,textField_1,textField_2,textField_3,textField_4,textField_5,textField_6;
 
     public Add_Customer()
@@ -41,7 +40,7 @@ public class Add_Customer extends JFrame
         Pnrno.setFont(new Font("Tahoma", Font.PLAIN, 17));
         Pnrno.setBounds(60, 120, 150, 27);
         add(Pnrno);
-        	
+			
         textField_1 = new JTextField();
         textField_1.setBounds(200, 120, 150, 27);
         add(textField_1);
@@ -87,7 +86,7 @@ public class Add_Customer extends JFrame
         Female.setBackground(Color.WHITE);
         Female.setBounds(280, 320, 70, 27);
         add(Female);
-
+            
         JLabel Phno = new JLabel("PH NO");
         Phno.setFont(new Font("Tahoma", Font.PLAIN, 17));
         Phno.setBounds(60, 370, 150, 27);
@@ -121,6 +120,7 @@ public class Add_Customer extends JFrame
         image.setBounds(450,80,280,410);
         add(image);
 
+            
         Next.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent ae)
@@ -144,13 +144,17 @@ public class Add_Customer extends JFrame
                 {
                         gender = "female";
                 }
-
+                    
                 try 
                 {
-                    connection c = new connection();
+                    Connection conn;
+                    Statement stat;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "root");
+                    stat=conn.createStatement();
                     String str = "INSERT INTO passenger values( '"+pnr_no+"', '"+address+"', '"+nationality+"','"+name+"', '"+gender+"', '"+ph_no+"','"+passport_No+"', '"+fl_code+"')";
                         
-                    c.stat.executeUpdate(str);
+                    stat.executeUpdate(str);
                     JOptionPane.showMessageDialog(null,"Customer Added");
                     setVisible(false);
                     

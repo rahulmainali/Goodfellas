@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
+//import net.proteanit.sql.DbUtils;
 
 public class Journey_Details extends JFrame
 {
@@ -18,6 +19,7 @@ public class Journey_Details extends JFrame
     {
         new Journey_Details();
     }
+    
     public Journey_Details()
     {
         
@@ -110,10 +112,14 @@ public class Journey_Details extends JFrame
                     String src  = (String) comboBox.getSelectedItem();
                     String dst  = (String) comboBox_1.getSelectedItem();
                     
-                    connection c = new connection();
+                    Connection conn;
+                    Statement stat;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "root");
+                    stat=conn.createStatement();
                     
                     String str = "select pnr_no,ticket_id,f_code,jny_date,jny_time,src,dst from reservation where src = '"+src+"' and dst = '"+dst+"'";
-                    ResultSet rs=c.stat.executeQuery(str);
+                    ResultSet rs=stat.executeQuery(str);
                     
                     if(rs.next())
                     {

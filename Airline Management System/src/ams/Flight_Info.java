@@ -46,19 +46,23 @@ public class Flight_Info extends JFrame
 	
         btnShow.addActionListener(new ActionListener()
         {
-            public void actionPerformed(ActionEvent ae) 
+            public void actionPerformed(ActionEvent ae)
             {
                 String code = textField.getText();
                 
                 try 
                 {
-                    connection c = new connection();
+                    Connection conn;
+                    Statement stat;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "root");
+                    stat=conn.createStatement();
                     String str = "select f_code,f_name,src,dst,capacity,class_code,class_name from flight,sector where f_code = '"+code+"'";
-                    ResultSet rs = c.stat.executeQuery(str);
+                    ResultSet rs = stat.executeQuery(str);
 					//table.setModel(DbUtils.resultSetToTableModel(rs));	
                     
                 }
-                catch(SQLException e)
+                catch(Exception e)
                 {
                     e.printStackTrace();
                 }

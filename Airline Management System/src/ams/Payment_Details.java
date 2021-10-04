@@ -21,6 +21,11 @@ public class Payment_Details extends JFrame
         new Payment_Details();
     }
 
+    public Payment_Details()
+    {
+	initialize();
+    }
+
     private void initialize()
     {
         setTitle("PAYMENT_DETAILS");
@@ -47,7 +52,7 @@ public class Payment_Details extends JFrame
         Show.setForeground(Color.WHITE);
 	    Show.setBounds(200, 210, 150, 26);
 	    add(Show);
-			
+		
 	    Sector = new JLabel("PAYMENT DETAILS");
 	    Sector.setForeground(Color.BLUE);
 	    Sector.setFont(new Font("Tahoma", Font.PLAIN, 31));
@@ -100,15 +105,19 @@ public class Payment_Details extends JFrame
                 {
                     String code  = textField.getText();
                     
-                    connection c = new connection();
+                    Connection conn;
+                	Statement stat;
+                	Class.forName("com.mysql.cj.jdbc.Driver");
+                	conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "root");
+                	stat=conn.createStatement();
                     String str = "select pnr_no,paid_amt,pay_date,cheque_no,card_no,ph_no from payment where pnr_no = '"+code+"'";
 					
-                    ResultSet rs = c.stat.executeQuery(str);
+                    ResultSet rs = stat.executeQuery(str);
 		
                     //table.setModel(DbUtils.resultSetToTableModel(rs));
 					
 		        }
-                catch(SQLException e)
+                catch(Exception e)
                 {
                     e.printStackTrace();
                 }

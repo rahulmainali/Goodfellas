@@ -39,7 +39,7 @@ public class Login extends JFrame implements ActionListener
         t1 = new TextField(15); 
 	    t2 = new TextField(15); 
         t2.setEchoChar('*');
-        
+	
 	    b2 = new Button("Reset");
         b2.setFont(f2);
 		
@@ -113,13 +113,17 @@ public class Login extends JFrame implements ActionListener
         {
             try
             {
-                connection c1 = new connection();
+                Connection conn;
+                Statement stat;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "root");
+                stat=conn.createStatement();
                 
                 String s1 = t1.getText();
                 String s2 = t2.getText();
             
                 String str = "select * from login where username = '"+s1+"' and password = '"+s2+"'";
-                ResultSet rs = c1.stat.executeQuery(str);  
+                ResultSet rs = stat.executeQuery(str);  
                 
                 if(rs.next())
                 {

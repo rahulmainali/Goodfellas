@@ -5,7 +5,7 @@ package ams;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.sql.*;
 
 public class Cancel extends JFrame 
 {
@@ -33,6 +33,7 @@ public class Cancel extends JFrame
 	    Cancellation.setFont(new Font("Tahoma", Font.PLAIN, 31));
 	    Cancellation.setBounds(185, 24, 259, 38);
 	    add(Cancellation);
+		
 	
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ams/Images/Cancel.png"));
         Image i2 = i1.getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT);
@@ -107,10 +108,14 @@ public class Cancel extends JFrame
 					
 		        try
                 {	
-                    connection c = new connection();
+                    Connection conn;
+                    Statement stat;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "root");
+                    stat=conn.createStatement();
                     String str = "INSERT INTO cancellation values('"+passenger_no+"', '"+cancellation_no+"', '"+cancellation_date+"', '"+ticket_id+"', '"+flight_code+"')";
 		
-                    c.stat.executeUpdate(str);
+                    stat.executeUpdate(str);
                     JOptionPane.showMessageDialog(null,"Ticket Canceled");
                     setVisible(false);
 						

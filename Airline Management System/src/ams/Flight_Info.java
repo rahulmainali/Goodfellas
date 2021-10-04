@@ -63,3 +63,62 @@ public class Flight_Info extends JFrame
             }
         }
         );
+        btnShow.setBounds(220, 150, 120, 30);
+	    add(btnShow);
+		
+        table = new JTable();
+        table.setBackground(Color.WHITE);
+	    table.setBounds(23, 250, 800, 300);
+        
+        JScrollPane pane = new JScrollPane(table);
+	    pane.setBounds(23, 250, 800, 300);
+        pane.setBackground(Color.WHITE);
+        add(pane);
+		
+	    textField = new JTextField();
+        textField.setBounds(220, 100, 200, 30);
+	    add(textField);
+		
+	    JLabel FlightCode = new JLabel("FLIGHT CODE");
+	    FlightCode.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        FlightCode.setBounds(23, 220, 126, 14);
+	    add(FlightCode);
+		
+	    JLabel FlightName = new JLabel("FLIGHT NAME");
+        FlightName.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    FlightName.setBounds(145, 220, 120, 14);
+	    add(FlightName);
+		
+	    JLabel Source = new JLabel("SOURCE");
+	    Source.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Source.setBounds(275, 220, 104, 14);
+	    add(Source);
+		
+	    JLabel Destination = new JLabel("DESTINATION");
+	    Destination.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Destination.setBounds(367, 220, 120, 14);
+	    add(Destination);
+		
+		
+	    JLabel Capacity = new JLabel("CAPACITY");
+	    Capacity.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    Capacity.setBounds(497, 220, 111, 14);
+	    add(Capacity);
+		
+	    JLabel ClassCode = new JLabel("CLASS CODE");
+	    ClassCode.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    ClassCode.setBounds(587, 220, 120, 14);
+	    add(ClassCode);
+		
+	    JLabel ClassName = new JLabel("CLASS NAME");
+	    ClassName.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	    ClassName.setBounds(700, 220, 111, 14);
+	    add(ClassName);
+		
+	
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+	    setSize(900,650);
+        setVisible(true);
+        setLocation(400,200);
+		
+    }

@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
-import net.proteanit.sql.DbUtils;
+//import net.proteanit.sql.DbUtils;
 
 public class Payment_Details extends JFrame
 {
@@ -75,7 +75,7 @@ public class Payment_Details extends JFrame
 	    add(Classname);
 		
 	    label = new JLabel("");
-	    label.setIcon(new ImageIcon(ClassLoader.getSystemResource("airline/management/system/icon/payment.png")));
+	    label.setIcon(new ImageIcon(ClassLoader.getSystemResource("ams/Images/Payment.png")));
 	    label.setBounds(425, 15, 239, 272);
 	    add(label);
 		
@@ -105,7 +105,7 @@ public class Payment_Details extends JFrame
 					
                     ResultSet rs = c.stat.executeQuery(str);
 		
-                    table.setModel(DbUtils.resultSetToTableModel(rs));
+                    //table.setModel(DbUtils.resultSetToTableModel(rs));
 					
 		        }
                 catch(SQLException e)

@@ -38,7 +38,7 @@ public class Mainframe extends JFrame
 		
         JMenuBar menuBar = new JMenuBar();
 	    setJMenuBar(menuBar);
-
+		
         JMenu AirlineSystem = new JMenu("AIRLINE SYSTEM");
         AirlineSystem.setForeground(Color.BLUE);
 	    menuBar.add(AirlineSystem);
@@ -65,3 +65,77 @@ public class Mainframe extends JFrame
         JMenu List = new JMenu("LIST");
         List.setForeground(Color.BLUE);
 	    menuBar.add(List);
+		
+	    JMenu Misc = new JMenu("MISC");
+        Misc.setForeground(Color.RED);
+	    menuBar.add(Misc);
+        
+	    FlightDetails.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+                new Flight_Info();
+            }
+        }
+        );
+        ReservationDetails.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+                try 
+                {
+                    new Add_Customer();
+                } 
+                catch (Exception e) 
+                {
+                    e.printStackTrace();
+		        } 
+            }
+        }
+        );
+		
+        PassengerDetails.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+                try 
+                {
+                    new Journey_Details();
+                } 
+                catch (Exception e) 
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+        );
+		
+        SectorDetails_1.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+                try 
+                {
+                    new Payment_Details();
+                } 
+                catch (Exception e) 
+                {
+                    e.printStackTrace();
+		        }
+            }
+        }
+        );
+		
+        Cancellation.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+                new Cancel();
+            }
+        }
+        );
+		
+        setSize(1950,1090);
+	    setVisible(true);
+    }
+}

@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
+//import net.proteanit.sql.DbUtils;
 
 public class Flight_Info extends JFrame
 {
@@ -54,6 +55,7 @@ public class Flight_Info extends JFrame
                     connection c = new connection();
                     String str = "select f_code,f_name,src,dst,capacity,class_code,class_name from flight,sector where f_code = '"+code+"'";
                     ResultSet rs = c.stat.executeQuery(str);
+					//table.setModel(DbUtils.resultSetToTableModel(rs));	
                     
                 }
                 catch(SQLException e)
@@ -63,6 +65,7 @@ public class Flight_Info extends JFrame
             }
         }
         );
+
         btnShow.setBounds(220, 150, 120, 30);
 	    add(btnShow);
 		
@@ -122,3 +125,4 @@ public class Flight_Info extends JFrame
         setLocation(400,200);
 		
     }
+}

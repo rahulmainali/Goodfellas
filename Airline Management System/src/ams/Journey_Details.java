@@ -117,7 +117,7 @@ public class Journey_Details extends JFrame
                     
                     if(rs.next())
                     {
-                        table.setModel(DbUtils.resultSetToTableModel(rs));
+                        //table.setModel(DbUtils.resultSetToTableModel(rs));
                     }
                     else
                     {

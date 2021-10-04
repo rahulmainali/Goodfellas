@@ -33,7 +33,6 @@ public class Cancel extends JFrame
 	    Cancellation.setFont(new Font("Tahoma", Font.PLAIN, 31));
 	    Cancellation.setBounds(185, 24, 259, 38);
 	    add(Cancellation);
-        
 	
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ams/Images/Cancel.png"));
         Image i2 = i1.getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT);
@@ -73,3 +72,59 @@ public class Cancel extends JFrame
         Cancel.setForeground(Color.WHITE);
 	    Cancel.setBounds(250, 350, 150, 30);
 	    add(Cancel);
+		
+	    textField = new JTextField();
+	    textField.setBounds(250, 100, 150, 27);
+	    add(textField);
+	
+        textField_1 = new JTextField();
+	    textField_1.setBounds(250, 150, 150, 27);
+	    add(textField_1);
+		
+	    textField_2 = new JTextField();
+	    textField_2.setBounds(250, 200, 150, 27);
+	    add(textField_2);
+	
+        textField_3 = new JTextField();
+	    textField_3.setBounds(250, 250, 150, 27);
+	    add(textField_3);
+		
+	    textField_4 = new JTextField();
+	    textField_4.setBounds(250, 300, 150, 27);
+	    add(textField_4);
+	
+        Cancel.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+		
+                String passenger_no = textField.getText();
+		        String cancellation_no = textField_1.getText();
+		        String cancellation_date = textField_2.getText();
+		        String ticket_id = textField_3.getText();
+		        String flight_code = textField_4.getText();
+					
+					
+		        try
+                {	
+                    connection c = new connection();
+                    String str = "INSERT INTO cancellation values('"+passenger_no+"', '"+cancellation_no+"', '"+cancellation_date+"', '"+ticket_id+"', '"+flight_code+"')";
+		
+                    c.stat.executeUpdate(str);
+                    JOptionPane.showMessageDialog(null,"Ticket Canceled");
+                    setVisible(false);
+						
+		        }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+        );
+			
+	    setSize(860,500);
+	    setVisible(true);
+        setLocation(400,200);
+    }
+}

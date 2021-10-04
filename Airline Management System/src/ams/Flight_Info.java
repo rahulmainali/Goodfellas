@@ -6,7 +6,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
+<<<<<<< Updated upstream
 //import net.proteanit.sql.DbUtils;
+=======
+import net.proteanit.sql.DbUtils;
+>>>>>>> Stashed changes
 
 public class Flight_Info extends JFrame
 {
@@ -59,7 +63,11 @@ public class Flight_Info extends JFrame
                     stat=conn.createStatement();
                     String str = "select f_code,f_name,src,dst,capacity,class_code,class_name from flight,sector where f_code = '"+code+"'";
                     ResultSet rs = stat.executeQuery(str);
+<<<<<<< Updated upstream
 					//table.setModel(DbUtils.resultSetToTableModel(rs));	
+=======
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+>>>>>>> Stashed changes
                     
                 }
                 catch(Exception e)

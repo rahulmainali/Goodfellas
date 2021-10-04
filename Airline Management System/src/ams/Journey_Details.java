@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
-//import net.proteanit.sql.DbUtils;
+import net.proteanit.sql.DbUtils;
 
 public class Journey_Details extends JFrame
 {
@@ -92,12 +92,13 @@ public class Journey_Details extends JFrame
 	    JComboBox<String> comboBox = new JComboBox<>(items1);
 	    comboBox.setBounds(150, 100, 150, 27);
 	    add(comboBox);
-		
+		// Creating a combo box to add those items
 		
 	    String[] items2 =  {"BANGALORE", "MUMBAI", "CHENNAI", "PATNA","DELHI","HYDERABAD"};
 	    JComboBox<String> comboBox_1 = new JComboBox<>(items2);
 	    comboBox_1.setBounds(500, 100, 150, 27);
 	    add(comboBox_1);
+		// Creating a combo box to add those items
         
         table = new JTable();
 	    table.setBounds(38, 310, 770, 130);
@@ -123,7 +124,7 @@ public class Journey_Details extends JFrame
                     
                     if(rs.next())
                     {
-                        //table.setModel(DbUtils.resultSetToTableModel(rs));
+                        table.setModel(DbUtils.resultSetToTableModel(rs));
                     }
                     else
                     {

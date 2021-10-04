@@ -7,7 +7,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
 
-public class Login extends JFrame implements ActionListener
+public class Login extends JFrame implements ActionListener // Using the interface of action listener
 {
     
     TextField t1,t2;
@@ -27,7 +27,8 @@ public class Login extends JFrame implements ActionListener
 		
         gbl=new GridBagLayout(); 
 	    gbc=new GridBagConstraints();
-        setLayout(gbl); 
+        setLayout(gbl);
+        // Creating row and column coordinates within the GUI
 	
         l1 = new Label("Username");
         l1.setFont(f1);
@@ -53,42 +54,48 @@ public class Login extends JFrame implements ActionListener
 	    gbc.gridy=0; 
         gbl.setConstraints(l1,gbc);
 	    add(l1);
+	    //setting the coordinates of username label
         
 	    gbc.gridx=2;
         gbc.gridy=0;
 	    gbl.setConstraints(t1,gbc);
         add(t1);
+        //setting the coordinates of username textfield
 		
 	    gbc.gridx=0;
         gbc.gridy=2;
 	    gbl.setConstraints(l2,gbc);
         add(l2);
+        //setting the coordinates of password label
 
 	    gbc.gridx=2;
         gbc.gridy=2;
         gbl.setConstraints(t2,gbc);
 	    add(t2);
-				
+        //setting the coordinates of password textfield
 	
 	    gbc.gridx=0;
         gbc.gridy=8;
 	    gbl.setConstraints(b2,gbc);
         add(b2);
+        //setting the coordinates of Reset button
 
         gbc.gridx=2;
 	    gbc.gridy=8;
         gbl.setConstraints(b3,gbc);
 	    add(b3);
+        //setting the coordinates of Submit button
 	
         gbc.gridx=4;
 	    gbc.gridy=8;
         gbl.setConstraints(b4,gbc);
 	    add(b4);
-        
+        //setting the coordinates of Close button
 
         b2.addActionListener(this);
         b3.addActionListener(this);
 	    b4.addActionListener(this);
+	    //Clicking the buttons for respective actions to be performed
                 
         setVisible(true);   
         setSize(400,250); 
@@ -147,5 +154,5 @@ public class Login extends JFrame implements ActionListener
     public static void main(String[] args)
     {
         new Login();
-    }
+    } //calling the constructor
 }

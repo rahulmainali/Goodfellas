@@ -11,12 +11,12 @@ public class Mainframe extends JFrame
     public static void main(String args[])
     {
         new Mainframe().setVisible(true);
-    }
+    } // calling the constructor
 
     public Mainframe()
     {
-        super("AIRLINE MANAGEMENT SYSTEM");
-        initialize();
+        super("AIRLINE MANAGEMENT SYSTEM"); //Setting the title
+        initialize(); // calling initialize methof
     }
 
     private void initialize()
@@ -37,118 +37,31 @@ public class Mainframe extends JFrame
         NewLabel.add(AirlineManagementSystem);
 
         JMenuBar menuBar = new JMenuBar();
-<<<<<<< Updated upstream
-	    setJMenuBar(menuBar);
-		
-        JMenu AirlineSystem = new JMenu("AIRLINE SYSTEM");
-        AirlineSystem.setForeground(Color.BLUE);
-	    menuBar.add(AirlineSystem);
-		
-        JMenuItem FlightDetails = new JMenuItem("FLIGHT INFO");
-	    AirlineSystem.add(FlightDetails);
-		
-	    JMenuItem ReservationDetails = new JMenuItem("ADD_CUSTOMER DETAILS");
-	    AirlineSystem.add(ReservationDetails);
-		
-	    JMenuItem PassengerDetails = new JMenuItem("JOURNEY DETAILS");
-	    AirlineSystem.add(PassengerDetails);
-		
-	    JMenuItem SectorDetails_1 = new JMenuItem("PAYMENT DETAILS");
-	    AirlineSystem.add(SectorDetails_1);
-		
-	    JMenuItem Cancellation = new JMenuItem("CANCELLATION");
-	    AirlineSystem.add(Cancellation);
-        
-	    FlightDetails.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent ae)
-            {
-                new Flight_Info();
-            }
-        }
-        );
-        ReservationDetails.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent ae)
-            {
-                try 
-                {
-                    new Add_Customer();
-                } 
-                catch (Exception e) 
-                {
-                    e.printStackTrace();
-		        } 
-            }
-        }
-        );
-		
-        PassengerDetails.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent ae)
-            {
-                try 
-                {
-                    new Journey_Details();
-                } 
-                catch (Exception e) 
-                {
-                    e.printStackTrace();
-                }
-            }
-        }
-        );
-		
-        SectorDetails_1.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent ae)
-            {
-                try 
-                {
-                    new Payment_Details();
-                } 
-                catch (Exception e) 
-                {
-                    e.printStackTrace();
-		        }
-            }
-        }
-        );
-		
-        Cancellation.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent ae)
-            {
-                new Cancel();
-            }
-        }
-        );
-		
-        setSize(1950,1090);
-	    setVisible(true);
-=======
         setJMenuBar(menuBar);
+        //Creating a menu on top of the program
 
         JMenu AirlineSystem = new JMenu("AIRLINE SYSTEM");
         AirlineSystem.setForeground(Color.BLUE);
         menuBar.add(AirlineSystem);
+        //Creating a dropdown menu on JMenuBar
 
         JMenuItem FlightDetails = new JMenuItem("FLIGHT INFO");
         AirlineSystem.add(FlightDetails);
+        //adding flight info in dropdown menu
 
         JMenuItem ReservationDetails = new JMenuItem("ADD_CUSTOMER DETAILS");
         AirlineSystem.add(ReservationDetails);
+        //adding reservation detail in dropdown menu
 
         JMenuItem PassengerDetails = new JMenuItem("JOURNEY DETAILS");
         AirlineSystem.add(PassengerDetails);
-
-        JMenuItem SectorDetails_1 = new JMenuItem("PAYMENT DETAILS");
-        AirlineSystem.add(SectorDetails_1);
+        //adding customer detail in dropdown menu
 
         JMenuItem Cancellation = new JMenuItem("CANCELLATION");
         AirlineSystem.add(Cancellation);
+        //adding cancellation in dropdown menu
 
-        FlightDetails.addActionListener(new ActionListener()
+        FlightDetails.addActionListener(new ActionListener() //Calling flight info
                                         {
                                             public void actionPerformed(ActionEvent ae)
                                             {
@@ -156,7 +69,7 @@ public class Mainframe extends JFrame
                                             }
                                         }
         );
-        ReservationDetails.addActionListener(new ActionListener()
+        ReservationDetails.addActionListener(new ActionListener() //Calling add customer details
                                              {
                                                  public void actionPerformed(ActionEvent ae)
                                                  {
@@ -172,7 +85,7 @@ public class Mainframe extends JFrame
                                              }
         );
 
-        PassengerDetails.addActionListener(new ActionListener()
+        PassengerDetails.addActionListener(new ActionListener() //Calling Journey details
                                            {
                                                public void actionPerformed(ActionEvent ae)
                                                {
@@ -188,23 +101,9 @@ public class Mainframe extends JFrame
                                            }
         );
 
-        SectorDetails_1.addActionListener(new ActionListener()
-                                          {
-                                              public void actionPerformed(ActionEvent ae)
-                                              {
-                                                  try
-                                                  {
-                                                      new Payment_Details();
-                                                  }
-                                                  catch (Exception e)
-                                                  {
-                                                      e.printStackTrace();
-                                                  }
-                                              }
-                                          }
-        );
 
-        Cancellation.addActionListener(new ActionListener()
+
+        Cancellation.addActionListener(new ActionListener() //Calling cancellation
                                        {
                                            public void actionPerformed(ActionEvent ae)
                                            {
@@ -215,6 +114,5 @@ public class Mainframe extends JFrame
 
         setSize(1950,1090);
         setVisible(true);
->>>>>>> Stashed changes
     }
 }

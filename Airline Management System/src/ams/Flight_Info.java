@@ -6,11 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
-<<<<<<< Updated upstream
-//import net.proteanit.sql.DbUtils;
-=======
-import net.proteanit.sql.DbUtils;
->>>>>>> Stashed changes
+import net.proteanit.sql.DbUtils; //Importing DbUtils methods
 
 public class Flight_Info extends JFrame
 {
@@ -20,18 +16,20 @@ public class Flight_Info extends JFrame
     public static void main(String[] args)
     {		 
 	new Flight_Info().setVisible(true);    
-    }
+    } // Calling the constructor
     
     public Flight_Info()
     {
         
         getContentPane().setBackground(Color.WHITE);
         getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 13));
+        //Setting bg color & font
 		
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setSize(860,523);
 	    setLayout(null);
 	    setVisible(true);
+	    //When the program is closed, the program ends in the background
 		
 	    JLabel Fcode = new JLabel("FLIGHT CODE");
 	    Fcode.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -63,11 +61,7 @@ public class Flight_Info extends JFrame
                     stat=conn.createStatement();
                     String str = "select f_code,f_name,src,dst,capacity,class_code,class_name from flight,sector where f_code = '"+code+"'";
                     ResultSet rs = stat.executeQuery(str);
-<<<<<<< Updated upstream
-					//table.setModel(DbUtils.resultSetToTableModel(rs));	
-=======
 					table.setModel(DbUtils.resultSetToTableModel(rs));
->>>>>>> Stashed changes
                     
                 }
                 catch(Exception e)
@@ -84,11 +78,13 @@ public class Flight_Info extends JFrame
         table = new JTable();
         table.setBackground(Color.WHITE);
 	    table.setBounds(23, 250, 800, 300);
-        
+        // Creating a table
+
         JScrollPane pane = new JScrollPane(table);
 	    pane.setBounds(23, 250, 800, 300);
         pane.setBackground(Color.WHITE);
         add(pane);
+        //Adding a scroll function
 		
 	    textField = new JTextField();
         textField.setBounds(220, 100, 200, 30);
